@@ -97,27 +97,64 @@ namespace SimpleXNBDemapper
 
         static void help()
         {
-            Console.WriteLine("usage xnbdemapper (pack|unpack) <input> <output>");
+            Console.WriteLine("usage xnbdemapper (pack|unpack) <input> [<output>]");
             Console.WriteLine("pack - packs a .tbin file to .xnb");
             Console.WriteLine("unpacks - unpacks a .xnb map file to .tbin");
         }
 
         static void Main(string[] args)
         {
-            if (args.Length < 3)
+            String outPath;
+            String inPath;
+            String command;
+            if (args.Length < 1)
             {
                 help();
                 return;
             }
-            switch (args[0])
+            inPath = args[0];
+            if (args.Length == 1)
+            {
+                switch (Path.GetExtension(inPath))
+                {
+                    case ".tbin":
+                        {
+                            command = "pack";
+                        }
+                        break;
+                    case ".xnb":
+                        {
+                            command = "unpack";
+                        }
+                        break;
+                    default:
+                        {
+                            Console.WriteLine("Error: Unrecognized file extension.");
+                            Console.ReadKey();
+                            return;
+                        }
+                }
+                outPath = Path.GetFileNameWithoutExtension(inPath);
+            } else if (args.Length == 2)
+            {
+                command = args[0];
+                inPath = args[1];
+                outPath = Path.GetFileNameWithoutExtension(args[1]);
+            } else
+            {
+                command = args[0];
+                inPath = args[1];
+                outPath = args[2];
+            }
+            switch (command)
             {
                 case "pack":
                     {
-                        pack(args[1], args[2]);
+                        pack(inPath, (args.Length <= 2 ? outPath + ".xnb" : outPath));
                     } break;
                 case "unpack":
                     {
-                        unpack(args[1], args[2]);
+                        unpack(inPath, (args.Length <= 2 ? outPath + ".tbin" : outPath));
                     } break;
                 default:
                     {
