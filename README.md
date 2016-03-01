@@ -13,7 +13,7 @@ Files do not need to be recompressed after packing back to xnb. Stardew can read
 * You may get an error message saying something like: "An error occured while opening the file. Details: Unable to load tile sheet 'desert-new' with image source '-------------------------------------------\DesertTiles' Inner Message: Parameter is not valid."
 * Here you see it saying \DesertTiles before "Inner Message" that means the tIDE Editor cannot find the DesertTiles graphics file.
 * In your Stardew Valley\Content\Maps\ Folder find the right file (in this case desertTiles.xnb)
-* Use one of the already available tools to turn it into a png file and rename it to remove the .png extension *(don't remove the .png extension if using 1.1.0 or greater)*
+* Use one of the already available tools to turn it into a png file and rename it to remove the .png extension **(don't remove the .png extension if using 1.1.0 or greater)**
 * Place alongside the .tbin map file when opening
 * Repeat this until tIDE stops complaining about not being able to load tilesheets
 
