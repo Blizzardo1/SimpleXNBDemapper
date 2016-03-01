@@ -6,6 +6,7 @@ Files do not need to be recompressed after packing back to xnb. Stardew can read
 
 ### Explorer
 ##### Unpacking and opening
+* [Video showing the decompilation process too](https://www.youtube.com/watch?v=AGj8wLCkk70)
 * Just drag the xnb file onto the .exe and it will create a .tbin file of the same name.
 * Open with [tIDE Map Editor](http://tide.codeplex.com/releases)
 
