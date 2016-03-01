@@ -1,5 +1,7 @@
 #The Stardew Valley maps are compressed by default, use one of the existing tools (e.g. [XNB Parser's](https://dl.dropbox.com/u/17271122/fez/fez_parse_0.7.zip) xnb_decomp.bat) to decompress it before attempting to use this with the file.
 
+Files do not need to be recompressed after packing back to xnb. Stardew can read the uncompressed xnb files.
+
 ## Usage
 
 ### Explorer
